@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>forEach</title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script>
+    const productos = [
+      { nombre: 'Laptop', precio: 1000 },
+      { nombre: 'Teléfono', precio: 500 },
+      { nombre: 'Tablet', precio: 300 }
+    ];
+    //const app = document.getElementById('app');
+    //productos.forEach((producto => {
+    //  app.innerHTML += `<ul><li>${producto.nombre} -- ${producto.precio}</li></ul>`;
+    //}))
+
+    const app = document.getElementById('app'); // accede al elemento <div id='app'> de html, este sera el contenedor de los productos.
+    const ul = document.createElement('ul'); // crea un nuevo elemento <ul> que aun no se ha agregado al dom.
+    productos.forEach(producto => { //productos es un array de objetos, forEach recorre cada uno de los objetos y ejecuta la funcion flecha.
+      const li = document.createElement('li'); // crea un nuevo elemento <li> que aun no se ha agregado al dom. y se guarda en la variable li.
+      li.textContent = `${producto.nombre} -- ${producto.precio}`; // se le asigna el contenido usando template literals.
+      ul.appendChild(li); // agrega el elemento <li> al elemento <lu> que se creo antes.
+    });
+    app.appendChild(ul); // inserta la lista completa en el dom, en el contenedor <div id='app'>.
+  </script>
+</body>
+
+</html>

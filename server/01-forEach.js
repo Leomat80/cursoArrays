@@ -19,5 +19,15 @@ const letras = ["be", "ce", "de", "ef", "ge"];
 
 for (let index = 0; index < letras.length; index++) {
   const elementos = letras[index];
-  console.log(elementos);
+  console.log("for", elementos);
 }
+
+letras.forEach((item) => console.log("forEach", item));
+
+/* 
+forEach es un metodo de los arrays que permite iterar sobre cada elemento del array.
+forEach recibe una funcion como argumento, que se ejecuta para cada elemento del array.
+El primer argumento de la funcion es el elemento actual del array, el segundo argumento es el indice del elemento actual y el tercer argumento es el array completo.
+forEach no devuelve nada, solo ejecuta la funcion para cada elemento del array.
+forEach es una forma mas sencilla de iterar sobre un array, ya que no es necesario inicializar un contador, ni definir la condicion de salida del bucle, ni incrementar el contador.
+*/
